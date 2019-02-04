@@ -1,4 +1,4 @@
-package com.maestro.kata;
+package com.java8.training.lambda;
 
 public class Person {
 

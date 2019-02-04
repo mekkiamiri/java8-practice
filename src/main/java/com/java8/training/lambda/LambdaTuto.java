@@ -1,4 +1,4 @@
-package com.maestro.kata;
+package com.java8.training.lambda;
 
 import java.util.*;
 import java.util.function.Consumer;

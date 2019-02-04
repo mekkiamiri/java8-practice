@@ -1,7 +1,8 @@
-package com.maestro.kata
+package com.java8.training.lambda
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
+
 class LambdaTutoTest {
 
     private val lambdaTuto = LambdaTuto()
@@ -18,7 +19,7 @@ class LambdaTutoTest {
     @Test
     fun should_convert_person_to_upper_cases() {
         val persons = listOf(Person("firstName1", "lastName1"),
-                             Person("firstName2", "lastName2"))
+                Person("firstName2", "lastName2"))
         val sortedList = lambdaTuto.updatePersonNames(persons)
 
         assertThat(sortedList).containsExactly(
