@@ -22,38 +22,32 @@ public class Videotheque {
         myMovies.add(new Movie("Cameron", "Titanic", "Drama", 180));
     }
 
-    /**
-     * Returns a list of movies whose length is shorter than the given length
-     * @param length
-     * @return
-     */
     public List<String> getMoviesWithMaxLength(int length) {
-        return null;
+        return myMovies.stream()
+                .filter(movie -> movie.getLength() <= length)
+                .map(Movie::getTitle)
+                .collect(Collectors.toList());
     }
 
-    /**
-     * Returns the total length of movies for a given director
-     * @param director
-     * @return
-     */
     public int getTotalLengthForDirector(String director) {
-        return 0;
+        return myMovies.stream()
+                .filter(movie -> director.equals(movie.getDirector()))
+                .mapToInt(Movie::getLength)
+                .sum();
     }
 
-    /**
-     * Orders the movie collection by director name
-     * @return
-     */
     public Map<String, List<Movie>> sortByDirector() {
-        return null;
+        return myMovies.stream()
+                .collect(groupingBy(Movie::getDirector));
     }
 
-    /**
-     * Returns a Map that keys film genre to a map that keys director names to a list of movi titles
-     * @return
-     */
     public Map<String, Map<String, List<String>>> sortByGenreAndDirector() {
-       return null;
+        return myMovies
+                .stream()
+                .collect(
+                        groupingBy(Movie::getGenre,
+                                groupingBy(Movie::getDirector, mapping(Movie::getTitle, Collectors.toList())
+                                )));
     }
 
 
