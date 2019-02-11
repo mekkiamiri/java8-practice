@@ -20,13 +20,7 @@ public class StreamOperations {
      * @return
      */
     public List<int[]> makePairs(List<Integer> list1, List<Integer> list2) {
-        return list1
-                .stream()
-                .flatMap(
-                        i -> list2.stream().map(
-                                j -> new int[] {i, j}
-                        )
-                ).collect(Collectors.toList());
+        return null;
     }
 
     /**
@@ -35,10 +29,7 @@ public class StreamOperations {
      * @return
      */
     public String generateNFibonnacciNumber(int n) {
-        return Stream.iterate(new int[]{0,1}, ints -> new int[]{ints[1], ints[0] + ints[1]})
-                .limit(n)
-                .map(ints -> Arrays.toString(ints))
-                .collect(Collectors.joining(","));
+        return null;
 
     }
 }
